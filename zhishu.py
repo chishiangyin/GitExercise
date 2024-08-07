@@ -1,4 +1,4 @@
-nums=list(range(2,10000))
+nums=list(range(2,100000))
 zhi=[]
 for num in nums:
     flag=0
