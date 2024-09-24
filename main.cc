@@ -135,7 +135,7 @@ int main(int argc, char* argv[])
         
         TH1D* h_TotalBetaSpec = new TH1D("h_TotalBetaSpec","",int(stod(nBin)),bins);
         h_TotalBetaSpec->GetXaxis()->SetTitle("E[MeV]"); 
-        TH1F* h_TotalNeuSpec = new TH1F("h_TotalNeuSpec","",int(stod(nBin)),bins);
+        TH1D* h_TotalNeuSpec = new TH1D("h_TotalNeuSpec","",int(stod(nBin)),bins);
         h_TotalNeuSpec->GetXaxis()->SetTitle("E[MeV]");
 
         //ratio
