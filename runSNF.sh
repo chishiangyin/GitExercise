@@ -1,0 +1,1 @@
+./main -InputType 1 -TestInputISO /junofs/users/yinqixiang/SummationSpectrum/input/SNF.txt -TestInputENSDF /junofs/users/yinqixiang/SummationSpectrum/input/ENSDF.txt -OuputFile ./SNF.root
