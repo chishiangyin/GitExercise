@@ -219,7 +219,7 @@ void IsotopeSpectrum::SetIsoNeuSpec(int CalTypeFlag,int BranchNormalFlag,double 
         ////
         double Te_1 = 0.5*0.5;
         double Ev_1 = Te_1;
-        BranchBetaSpectrum.push_back(BetaDecay.BranchBetaSpec(LevelIsoENSDFBetaDecayData[i].Z,LevelIsoENSDFBetaDecayData[i].A,Ev_1,E0,DT,CalTypeFlag));
+        BranchNeuSpectrum.push_back(BetaDecay.BranchBetaSpec(LevelIsoENSDFBetaDecayData[i].Z,LevelIsoENSDFBetaDecayData[i].A,Ev_1,E0,DT,CalTypeFlag));
         ////
 
         for(int j=0;j<int((LevelIsoENSDFBetaDecayData[i].Qvalue+LevelIsoENSDFBetaDecayData[i].ParentEnergyLevel-LevelIsoENSDFBetaDecayData[i].EnergyLevel)/EnergyBin)+1;j++)
