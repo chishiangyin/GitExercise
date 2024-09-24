@@ -12,6 +12,7 @@
 #include "IsotopeSpectrum.hh"
 #include "Input.hh"
 #include <string>
+#include "TH1D.h" //
 
 int main(int argc, char* argv[]) 
 {
@@ -121,15 +122,26 @@ int main(int argc, char* argv[])
     if(InputType == '0' && DecayInput.size()!=0 && FissionInput.size()!=0) 
     {
         
-        TH1F* h_TotalBetaSpec = new TH1F("h_TotalBetaSpec","",int(stod(nBin)),0,stod(nBin)*stod(EnergyBin));
+        ///
+        Double_t bins[102]; //101个bin对应102个边界
+        bins[0] = 0;
+        bins[1] = 0.05;
+
+        for (int i=2; i<102; i++) 
+        {
+            bins[i] = bins[i-1] + 0.1;
+        }
+        ///
+        
+        TH1D* h_TotalBetaSpec = new TH1D("h_TotalBetaSpec","",int(stod(nBin)),bins);
         h_TotalBetaSpec->GetXaxis()->SetTitle("E[MeV]"); 
-        TH1F* h_TotalNeuSpec = new TH1F("h_TotalNeuSpec","",int(stod(nBin)),0,stod(nBin)*stof(EnergyBin));
+        TH1F* h_TotalNeuSpec = new TH1F("h_TotalNeuSpec","",int(stod(nBin)),bins);
         h_TotalNeuSpec->GetXaxis()->SetTitle("E[MeV]");
 
         //ratio
-        TH1F* h_TotalBetaRatioSpec = new TH1F("h_TotalBetaRatioSpec","",int(stod(nBin)),0,stod(nBin)*stod(EnergyBin));
+        TH1D* h_TotalBetaRatioSpec = new TH1D("h_TotalBetaRatioSpec","",int(stod(nBin)),bins);
         h_TotalBetaRatioSpec->GetXaxis()->SetTitle("E[MeV]");
-        TH1F* h_TotalNeuRatioSpec = new TH1F("h_TotalNeuRatioSpec","",int(stod(nBin)),0,stod(nBin)*stod(EnergyBin));
+        TH1D* h_TotalNeuRatioSpec = new TH1D("h_TotalNeuRatioSpec","",int(stod(nBin)),bins);
         h_TotalNeuRatioSpec->GetXaxis()->SetTitle("E[MeV]");
 
         for(int i=0;i<int(stod(nBin));i++)
