@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+PROJECT(main CXX C)
+find_package(ROOT REQUIRED)
+include_directories(${ROOT_INCLUDE_DIRS})
+add_library(mylib SHARED main.cc)
+target_link_libraries(mylib ${ROOT_LIBRARIES})
+add_executable(main main.cc)
+target_link_libraries(main mylib)

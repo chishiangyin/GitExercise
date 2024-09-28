@@ -1,0 +1,4 @@
+/workfs2/bes/yinqixiang/MyRepository/build/CMakeFiles/mylib.dir
+/workfs2/bes/yinqixiang/MyRepository/build/CMakeFiles/main.dir
+/workfs2/bes/yinqixiang/MyRepository/build/CMakeFiles/edit_cache.dir
+/workfs2/bes/yinqixiang/MyRepository/build/CMakeFiles/rebuild_cache.dir
